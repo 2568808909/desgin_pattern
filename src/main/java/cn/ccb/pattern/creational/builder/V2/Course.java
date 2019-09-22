@@ -33,7 +33,7 @@ public class Course {
         private String article;
         private String courseQA;
 
-        public CourseBuilder buildCourseNmae(String courseName) {
+        public CourseBuilder buildCourseName(String courseName) {
             this.courseName=courseName;
             return this;
         }
