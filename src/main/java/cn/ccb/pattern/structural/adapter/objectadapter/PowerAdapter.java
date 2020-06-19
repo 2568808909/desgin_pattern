@@ -4,7 +4,6 @@ public class PowerAdapter implements DC5V {
 
     private AC220 ac220=new AC220();
 
-    @Override
     public int outputDC5V() {
         int input=ac220.outputAC220V();
         int output=input/44;

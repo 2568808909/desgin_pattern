@@ -42,7 +42,7 @@ public class Mail implements Cloneable {
     protected Object clone() throws CloneNotSupportedException {
         Mail mail = (Mail) super.clone();
         //深克隆所需操作
-        mail.date = (Date) date.clone();
+        //mail.date = (Date) date.clone();
         return mail;
     }
 }

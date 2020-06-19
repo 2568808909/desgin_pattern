@@ -12,7 +12,7 @@ public class Test {
         for(int i=0;i<10;i++){
             Mail mail= (Mail) mailTemp.clone();
             mail.setAddress(i+"同学");
-            mail.setDate(new Date());
+            //mail.setDate(new Date());
             System.out.println(mail);
         }
     }
