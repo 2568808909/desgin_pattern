@@ -8,7 +8,7 @@ public class Test {
         CourseComponent javaCataLog=new CourseCataLog("java");
         courseComponent.add(javaCataLog);
         javaCataLog.add(new Course("java",59));
-        new Course("电商",77);
+        javaCataLog.add(new Course("电商",77));
         courseComponent.print();
     }
 }

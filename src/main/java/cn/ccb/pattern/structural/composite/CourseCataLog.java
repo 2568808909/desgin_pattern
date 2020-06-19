@@ -3,9 +3,9 @@ package cn.ccb.pattern.structural.composite;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CourseCataLog extends CourseComponent{
+public class CourseCataLog extends CourseComponent {
 
-    private List<CourseComponent> courseComponents=new ArrayList<>();
+    private List<CourseComponent> courseComponents = new ArrayList<>();
 
     public CourseCataLog(String name) {
         super(name);
@@ -13,7 +13,7 @@ public class CourseCataLog extends CourseComponent{
 
     @Override
     protected void add(CourseComponent courseComponent) {
-        courseComponent.add(courseComponent);
+        courseComponents.add(courseComponent);
     }
 
     @Override
@@ -28,6 +28,7 @@ public class CourseCataLog extends CourseComponent{
 
     @Override
     protected void print() {
+        System.out.println(this.name + ":");
         courseComponents.forEach(CourseComponent::print);
     }
 }
