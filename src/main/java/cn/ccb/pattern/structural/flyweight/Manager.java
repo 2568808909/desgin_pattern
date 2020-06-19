@@ -1,13 +1,15 @@
 package cn.ccb.pattern.structural.flyweight;
 
-import lombok.Setter;
 
 public class Manager implements Employee {
 
     private String department;
 
-    @Setter
     private String reportContent;
+
+    public void setReportContent(String reportContent) {
+        this.reportContent = reportContent;
+    }
 
     public Manager(String department) {
         this.department = department;
