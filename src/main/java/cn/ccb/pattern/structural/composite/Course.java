@@ -25,6 +25,6 @@ public class Course extends CourseComponent{
 
     @Override
     protected void print() {
-        System.out.println(name +""+cost);
+        System.out.println(name +" "+cost);
     }
 }

@@ -9,11 +9,20 @@ public class CourseCataLog extends CourseComponent {
 
     public CourseCataLog(String name) {
         super(name);
+        this.level = 0;
     }
 
     @Override
     protected void add(CourseComponent courseComponent) {
         courseComponents.add(courseComponent);
+        courseComponent.setLevel(this.level + 1);
+        if (courseComponent instanceof CourseCataLog) {
+            ((CourseCataLog) courseComponent).resetLevel();
+        }
+    }
+
+    private void resetLevel() {
+        courseComponents.forEach(courseComponent -> courseComponent.setLevel(this.level + 1));
     }
 
     @Override
@@ -29,6 +38,10 @@ public class CourseCataLog extends CourseComponent {
     @Override
     protected void print() {
         System.out.println(this.name + ":");
-        courseComponents.forEach(CourseComponent::print);
+        courseComponents.forEach(courseComponent -> {
+            for (int i = 0; i < courseComponent.level; i++)
+                System.out.print("\t");
+            courseComponent.print();
+        });
     }
 }

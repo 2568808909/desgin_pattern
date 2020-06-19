@@ -4,8 +4,14 @@ public abstract class CourseComponent {
 
     protected String name;
 
+    protected int level;
+
     public CourseComponent(String name){
         this.name=name;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
     }
 
     protected void add(CourseComponent courseComponent){
