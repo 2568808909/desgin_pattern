@@ -34,17 +34,20 @@ public class Course extends CourseComponent {
     public Iterator<CourseComponent> iterator() {
         return new CourseIterator();
     }
-}
 
-class CourseIterator implements Iterator<CourseComponent> {
+    class CourseIterator implements Iterator<CourseComponent> {
 
-    @Override
-    public boolean hasNext() {
-        return false;
-    }
+        private boolean flag = true;
 
-    @Override
-    public Course next() {
-        return null;
+        @Override
+        public boolean hasNext() {
+            return flag;
+        }
+
+        @Override
+        public Course next() {
+            flag = false;
+            return Course.this;
+        }
     }
 }

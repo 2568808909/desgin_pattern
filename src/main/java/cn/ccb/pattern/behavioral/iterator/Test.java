@@ -24,5 +24,11 @@ public class Test {
                 component.print();
             }
         }
+
+        System.out.println();
+        Course course = new Course("数据结构", 50);
+        for (CourseComponent c : course) {
+            c.print();
+        }
     }
 }
