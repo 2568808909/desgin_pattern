@@ -1,5 +1,12 @@
 package cn.ccb.pattern.behavioral.memento;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.ToString;
+
+@Data
+@AllArgsConstructor
+@ToString
 public class Article {
     private String title;
 
@@ -7,33 +14,13 @@ public class Article {
 
     private String images;
 
-    public Article(String title, String content, String images) {
-        this.title = title;
-        this.content = content;
-        this.images = images;
+    public ArticleMemento save() {
+        return new ArticleMemento(title, content, images);
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public String getImages() {
-        return images;
-    }
-
-    public void setImages(String images) {
-        this.images = images;
+    public void load(ArticleMemento articleMemento) {
+        this.title = articleMemento.getTitle();
+        this.content = articleMemento.getContent();
+        this.images = articleMemento.getImages();
     }
 }
